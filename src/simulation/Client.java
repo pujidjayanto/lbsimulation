@@ -16,6 +16,7 @@ public class Client {
   }
 
   public void sendRequest(String request) {
+    System.out.println("Client " + ipAddress + " sending: " + request);
     this.loadBalancer.handleRequest(request);
   }
 

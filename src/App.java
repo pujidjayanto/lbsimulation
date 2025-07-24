@@ -11,11 +11,9 @@ public class App {
 		mainLoadBalancer.registerBackend(new Backend());
 		mainLoadBalancer.registerBackend(new Backend());
 
-		Client mainClient = new Client(mainLoadBalancer);
-		mainClient.sendRequest("Login");
-		mainClient.sendRequest("Update Profile");
-		mainClient.sendRequest("Buy Shoes");
-		mainClient.sendRequest("Buy Bag");
-		mainClient.sendRequest("Buy Phone");
+		for (int i = 0; i < 10; i++) {
+			Client client = new Client(mainLoadBalancer);
+			client.sendRequest("Request from client " + i);
+		}
 	}
 }
