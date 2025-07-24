@@ -15,6 +15,7 @@ public class LoadBalancer {
       System.out.println("No backend servers registered yet");
     }
 
+    // Start with round robin
     Backend selectedServer = servers.get(currentServerIndex);
     currentServerIndex = (currentServerIndex + 1) % servers.size();
     selectedServer.handleRequest(request);
